@@ -1,7 +1,7 @@
 'use strict';
 
 const name = prompt('What is your name?');
-const age  = prompt('What is your age?');
+let age  = prompt('What is your age?');
 let likesProgramming = confirm('Do you like programming?');
 
 
@@ -16,3 +16,18 @@ console.log(typeof likesProgramming);
 let greeting = (`Hello, + ${name}!`).trim();
 
 alert(greeting);
+
+age = Number(age)
+let numericAge = age
+let nextAge = numericAge + 1
+
+console.log(nextAge)
+
+let isAdult = true
+if (age >= 18) {
+    console.log(isAdult)
+} else {
+    console.log(false)
+}
+
+
