@@ -6,4 +6,4 @@ const num3 = +prompt('Enter third number');
 
 let sum = (num1 + num2 + num3)/ 3
 
-alert(sum);
+alert('Cереднє значення ' + sum);
