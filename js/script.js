@@ -1,3 +1,4 @@
+
 'use strict';
 
 const yearOfBirth = prompt('Введіть ваш рік народження')
@@ -37,24 +38,23 @@ switch (city) {
 
 const sport = prompt('Введіть улюблений вид спорту')
 
-     switch (sport) {
-         case 'Box':
-             console.log('Круто! Хочеш стати Усиком?');
-             break;
-         case 'Basketball':
-             console.log('Круто! Хочеш стати Джорданом?');
-             break;
-         case 'Football':
-             console.log('Круто! Хочеш стати Роналдо?');
-             break;
-         case null :
-             console.log('Шкода, що Ви не захотіли ввести свій вид спорту')
-             break;
-         default: sport.trim()
-             console.log('Шкода, що Ви не захотіли ввести свій вид спорту')
+switch (sport) {
+    case 'Box':
+        console.log('Круто! Хочеш стати Усиком?');
+        break;
+    case 'Basketball':
+        console.log('Круто! Хочеш стати Джорданом?');
+        break;
+    case 'Football':
+        console.log('Круто! Хочеш стати Роналдо?');
+        break;
+    case null :
+        console.log('Шкода, що Ви не захотіли ввести свій вид спорту')
+        break;
+    default: sport.trim()
+        console.log('Шкода, що Ви не захотіли ввести свій вид спорту')
 
 
-     }
+}
 
 alert("Ваш вік: " + currentAge + "\nМісто: " + city + "\nУлюблений спорт: " + sport);
-
