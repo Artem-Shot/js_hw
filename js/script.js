@@ -4,7 +4,7 @@ const characters = 'abcdefghijklmnopqrstuvwxyz0123456789';
 const key = generateKey(16, characters);
 function generateKey(length, characters) {
   let key = '';
-  for (let i = 0; i < length; i++) {
+  for (let i = 0; i < length; i += 1) {
     const randomSymbol = Math.floor(Math.random() * characters.length);
     key += characters[randomSymbol];
   }
