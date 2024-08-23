@@ -1,19 +1,24 @@
 'use strict';
 
-function padString(str, num, char, bool) {
+function padString(str, num, char, addLeft = false) {
+  let result = '';
+  const stringLength = num - str.length;
+
   if (typeof str !== 'string') {
     return 'some error string';
   }
   if (typeof num !== 'number') {
     return 'some error number';
   }
-  if (typeof char !== 'string' || char.length !== 1) {
-    return 'some error length';
-  }
-  if (typeof bool !== 'boolean') {
+  if (typeof addLeft !== 'boolean') {
     return 'some error boolean';
   }
-  if (num < str.length) { return str.substr(0, num); }
+  if (num < str.length) return str.substr(0, num);
+
+  for (let i = 0; i < stringLength; i++) {
+    result += char;
+  }
+  return addLeft ? result + str : str + result;
 }
 
 console.log(padString('hello', 8, '*'));
