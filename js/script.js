@@ -22,7 +22,7 @@
 //   }
 // }
 
-// const num = 5;
+// const num = 10;
 // if (typeof (num) === 'number' && !isNaN(num) && isFinite(num)) {
 //   if (num < 1) {
 //     console.log('error');
@@ -32,7 +32,7 @@
 //   }
 // }
 // for (let i = 2; i < num; i++) {
-//   if (num % i !== 0) {
+//   if (num % i === 0) {
 //     console.log(num);
 //   }
 // }
