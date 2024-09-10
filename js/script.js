@@ -1,27 +1,34 @@
 'use strict';
 
-const minBal = 2000;
+const minimalBalance = 2000;
 
-const removeSymbols = (str, symbToRemove) => {
+const clearSymbols = (string, symRem) => {
   const result = [];
-  for (let i = 0; i < str.length; i++) {
-    if (symbToRemove.includes(str[i])) continue;
-    result.push(str[i]);
+  for (let i = 0; i < string.length; i++) {
+    if (symRem.includes(string[i])) continue;
+    result.push(string[i]);
   }
   return result.join('');
 };
 
-const phoneNumMinBalance = (arr, minBal = 0, balKey = 'balance') => {
+const phNumBal = (arr, minimalBalance) => {
+  const result = [];
   arr.forEach((item) => {
-    const newString = Number(removeSymbols(item.balance, ['$', ',']));
-    console.log(newString);
+    const corected = clearSymbols(item.balance, ['$', ',']);
+    if (corected > minimalBalance) result.push(item.phone);
   });
+  return result;
 };
 
-const phoneNumbers = phoneNumMinBalance(users, minBal, phoneNumMinBalance);
-console.log(phoneNumbers);
-// const newArr = users.filter((item) => item.balance > minBal);
-// const sumOfAllBalances = 0;
-//
-// newArr.forEach((item) => { item.balance = sumOfAllBalances += item.balance; });
-// console.log(sumOfAllBalances);
+const numbers = phNumBal(users, minimalBalance);
+console.log(numbers);
+
+const average = (arr) => {
+  const result = users.reduce((acc, item) => {
+    const corected = Number(clearSymbols(item.balance, ['$', ',']));
+    const allBalance = acc + corected;
+    return Number(allBalance.toFixed(2));
+  }, 0);
+  return result;
+};
+console.log(`Сума усіх рахунків: ${average(users)}`);
