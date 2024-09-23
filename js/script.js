@@ -8,11 +8,11 @@ const insertWordInto = (str) => {
     const newString = str.split(' ');
 
     if (num === 0) {
-      const getMiddle = Math.floor((newString.length - 1) / 2);
+      const getMiddle = Math.floor(newString.length / 2);
       result = [
-        ...newString.slice(0, getMiddle + 1),
+        ...newString.slice(0, getMiddle),
         word,
-        ...newString.slice(getMiddle + 1),
+        ...newString.slice(getMiddle),
       ].join(' ');
     } else if (num === 1) {
       result = `${word} ${str}`;
