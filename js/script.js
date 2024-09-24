@@ -1,29 +1,30 @@
 'use strict';
 
-const cars = [
-  {
-    brand: 'Jaguar',
-    price: 30000,
-    bodyStyle: 'sedan',
-  },
-  {
-    brand: 'Land Rover',
-    price: 80000,
-    bodyStyle: 'crosover',
-  },
-  {
-    brand: 'porsche',
-    price: 130000,
-    bodyStyle: 'coupe',
-  },
-];
-
-const getCarInfo = function (str) {
-  console.log(str);
-  console.log(`${this.brand} is ${this.bodyStyle} costs ${this.price}`);
+const cars = {
+  brand: 'Jaguar',
+  price: 50000,
 };
 
-for (const car of cars) {
-  const x = getCarInfo.bind(car, `This car costs ${car.price}`);
-  x();
-}
+const getCarInfo = function () {
+  return `${this.brand} costs ${this.price}`;
+};
+
+const apply = function (func, context, ...args) {
+  let result = null;
+  context.func = func;
+  result = context.func(...args);
+  delete context.func;
+  return result;
+};
+
+const bind = function (func, context, ...args) {
+  if (!func) return undefined;
+
+  return function () {
+    return apply(func, context, ...args);
+  };
+};
+
+const bindGetCarInfo = bind(getCarInfo, cars);
+console.log(bindGetCarInfo());
+console.log(bindGetCarInfo);
