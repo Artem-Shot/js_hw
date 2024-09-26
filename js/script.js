@@ -12,7 +12,6 @@ const ladder = {
   },
   showStep() { // показывает текущую ступеньку
     alert(this.step);
-    return this;
   },
 };
 
