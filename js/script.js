@@ -7,10 +7,10 @@ for (let i = 0; i < 10; i++) {
   for (let j = 0; j < 10; j++) {
     const value = document.createElement('td');
     value.textContent = number;
-    row.appendChild(value);
+    row.append(value);
     number++;
   }
-  tableBody.appendChild(row);
+  tableBody.append(row);
 }
 
 setTimeout(() => {
