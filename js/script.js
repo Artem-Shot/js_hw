@@ -1,11 +1,11 @@
 'use strict';
 
-const p = document.querySelector('p');
+const input = document.querySelector('input');
 const ghost = document.querySelector('[data-p]');
-p.addEventListener('focus', (e) => {
+input.addEventListener('focus', (e) => {
   ghost.style.display = 'block';
 });
 
-p.addEventListener('blur', (e) => {
+input.addEventListener('blur', (e) => {
   ghost.style.display = 'none';
 });
