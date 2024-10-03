@@ -13,6 +13,9 @@ const getRanromNum = () => {
 const generateImg = (imgName) => {
   const newImage = document.createElement('img');
   newImage.src = `${IMG_FOLDER}${imgName + IMG_EXT}.`;
+  newImage.alt = `${IMG_FOLDER}${imgName + IMG_EXT}.`;
+  newImage.title = `${IMG_FOLDER}${imgName + IMG_EXT}.`;
+
   return newImage;
 };
 
