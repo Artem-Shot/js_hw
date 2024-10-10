@@ -7,8 +7,6 @@ const generateList = (array) => {
       const li = document.createElement('li');
       if (Array.isArray(item)) {
         li.appendChild(newList(item));
-      } else {
-        li.textContent = item;
       }
       ul.appendChild(li);
     });
