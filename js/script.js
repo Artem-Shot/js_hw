@@ -1,19 +1,21 @@
 'use strict';
 
+import key from './xxx.js';
+
 (function () {
   const form = document.querySelector('[data-form]');
   const todoItemsContainer = document.querySelector('#todo-list');
 
   const saveData = (data) => {
-    const savedData = localStorage.getItem('todoItem');
+    const savedData = localStorage.getItem(key);
     if (!savedData) {
       const preparedData = [];
       preparedData.push(data);
-      localStorage.setItem('todoItem', JSON.stringify(preparedData));
+      localStorage.setItem(key, JSON.stringify(preparedData));
     } else {
       const preparedData = JSON.parse(savedData);
       preparedData.push(data);
-      localStorage.setItem('todoItem', JSON.stringify(preparedData));
+      localStorage.setItem(key, JSON.stringify(preparedData));
     }
   };
   const createTodoItem = ({ title, description }) => {
@@ -40,7 +42,7 @@
 
   form.addEventListener('submit', submitHandler);
   document.addEventListener('DOMContentLoaded', () => {
-    const newSavedData = JSON.parse(localStorage.getItem('todoItem'));
+    const newSavedData = JSON.parse(localStorage.getItem(key));
     newSavedData.forEach((item) => {
       const todoItemElement = createTodoItem(item);
       todoItemsContainer.prepend(todoItemElement);
