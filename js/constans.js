@@ -1,2 +1,2 @@
-const storageKey = 'todoItem';
-export default storageKey;
+const key = 'todoItem';
+export default key;
