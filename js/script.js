@@ -168,3 +168,36 @@ console.log(student4.averageVisits());
 console.log(student4);
 
 console.log(student4.summary());
+
+// function Student(name, surname, birthYear) {
+//     this.name = name;
+//     this.surname = surname;
+//     this.birthYear = birthYear;
+//     this.curentLesson = 0;
+//     this.visits = Array(10);
+//     this.marks = Array(10);
+// }
+// Student.prototype._setVisits = function (isLessonVisited) {
+//     if (typeof isLessonVisited !== 'boolean') console.error('should be a boolean');
+//     if (this.curentLesson < 0 && this.curentLesson >= 10) console.error('lesson should be 0 to 10');
+//     this.visits[this.curentLesson] = isLessonVisited;
+//     this.curentLesson++;
+// };
+// Student.prototype.present = function () {
+//     this._setVisits(true);
+// };
+//
+// Student.prototype.absent = function () {
+//     this._setVisits(false);
+// };
+//
+// Student.prototype.mark = function (value) {
+//     const minMark = 0;
+//     const maxMark = 10;
+//     if (typeof value !== 'number') throw new TypeError('value must be a number');
+//     if (value < maxMark || value > maxMark) console.error(`value should be on ${minMark} to ${maxMark}`);
+//     const curentLessonNumber = this.curentLesson - 1;
+//     if (!this.visits[curentLessonNumber]) console.error('student doesent visited this lesson');
+//     this.marks[curentLessonNumber] = value;
+// };
+// export default Student;
