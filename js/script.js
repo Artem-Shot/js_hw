@@ -1,6 +1,4 @@
 import PrintedBook from './classes/PrintedBook.js';
-import Employee from './classes/Ebook.js';
-import printedBook from './classes/PrintedBook.js';
 import ebook from './classes/Ebook.js';
 
 const pBook1 = new PrintedBook({
