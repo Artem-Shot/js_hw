@@ -30,12 +30,12 @@ class TaskQueue {
   }
 }
 
-const queue = new TaskQueue(1000); // затримка між завданнями — 1 секунда
+const queue = new TaskQueue(1000);
 
 queue.addTask(() => Promise.resolve('Task 1 виконано'));
 queue.addTask(() => Promise.resolve('Task 2 виконано'));
 queue.addTask(() => Promise.resolve('Task 3 виконано'));
 
 queue.run().then((message) => {
-  console.log(message); // Усі завдання завершено
+  console.log(message);
 });
