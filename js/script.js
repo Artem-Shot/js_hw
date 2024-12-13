@@ -15,7 +15,7 @@ searchPostButton.addEventListener('click', () => {
 
 const getPostById = async (id) => {
   const postResponse = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`);
-  if (!postResponse.ok) {
+  if (!postResponse) {
     console.error('post not found');
   }
   const post = await postResponse.json();
@@ -25,7 +25,7 @@ const getPostById = async (id) => {
 
 const displayPost = (post) => {
   postContainer.innerHTML = `
-    <div">
+    <div>
       <h2>${post.title}</h2>
       <p>${post.body}</p>
       <button id="loadComments">Load Comments</button>
@@ -38,13 +38,13 @@ const fetchComments = async (postId) => {
   const commentsContainer = document.getElementById('commentsContainer');
 
   const commentsResponse = await fetch(`https://jsonplaceholder.typicode.com/posts/${postId}/comments`);
-  if (!commentsResponse.ok) {
+  if (!commentsResponse) {
     console.error('comment not found');
   }
   const comments = await commentsResponse.json();
   commentsContainer.innerHTML = `
       <h3>Comments:</h3>
-      <ul>
+      <li>
         ${comments.map((comment) => `${comment.name}: ${comment.body}`).join('')}
-      </ul>`;
+      </li>`;
 };
